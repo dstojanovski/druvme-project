@@ -1,0 +1,30 @@
+extends base
+
+block content
+  main.main
+    .newTrip-form
+      h2.heading-secondary.ma-bt-lg Add new trip
+      form.formNewTrip.form--newTrip
+        .form__group
+          label.form__label(for='startingPoint') Starting Point
+          input#startingPoint.form__input(type='startingPoint', placeholder='Ljubljana, Bitola', required)
+        .form__group.ma-bt-md
+          label.form__label(for='destination') Destination
+          input#destination.form__input(type='destination', placeholder='Zagreb, Bitola', required)
+        .form__group.ma-bt-md
+          label.form__label(for='price') Price
+          input#price.form__input(type='price', placeholder='5 Evra', required)
+        .form__group.ma-bt-md
+          label.form__label(for='Passengers') Passengers
+          input#passengers.form__input(type='passengers', placeholder='3', required)
+        .form__group.ma-bt-md
+          label.form__label(for='StartDate') Start Date
+          input#startDate.form__input(type='StartDate', placeholder='12/5/2021', required)
+        .form__group.ma-bt-md
+          label.form__label(for='StartTime') Start Time
+          input#startTime.form__input(type='StartTime', placeholder='15:30', required)
+        .form__group.ma-bt-md
+          label.form__label(for='Description') Description
+          input#description.form__input(type='Description', placeholder='Pobiram po poti')
+        .form__group
+          button.btn.btn--green Add

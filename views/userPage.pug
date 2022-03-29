@@ -1,0 +1,13 @@
+extends base
+block content
+    div.tripCard
+        h1.tripElement.startingPoint= listeduser.name
+        h1.tripElement.destination= listeduser.email
+        h1.tripElement.destination= listeduser.id
+    div.reviewsDiv
+        each review in reviews
+            h1.reviewCreator= review.createdBy.name
+            h1.reviewDescription= review.reviewDescription
+            h2.reviewRating= review.rating
+        h2.reviewresults= results
+                

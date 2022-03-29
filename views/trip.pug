@@ -1,0 +1,11 @@
+extends base
+block content
+    div.tripCard
+                h1.tripElement.startingPoint= trip.startingPoint
+                h1      ->
+                h1.tripElement.destination= trip.destination
+                h1.tripElement.tripPrice= trip.price
+                h1.tripElement.tripTimeAndDate= trip.timeAndDate
+                a(href= '/user/'+ trip.driver.id)
+                    h1.tripElement.tripDriver= trip.driver.name
+                

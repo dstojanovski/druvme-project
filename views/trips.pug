@@ -1,0 +1,50 @@
+extends base
+
+block content
+    form.searchFormTrips
+        div.mbsc-grid.mbsc-grid-fixed.mbsc-no-padding.selectFormStarting
+            div.mbsc-row
+                div.mbsc-col-sm-12
+                    div.mbsc-form-group-inset
+                    label.form__label(for='hierarchical-country') Starting Contry
+                        Country
+                        select.mbsc-input#hierarchical-country(data-dropdown="true", placeholder="Please select...") Please select
+                            option(value= 'empty') Please select ...
+                            option(value= 'si') Slovenija
+                            option(value= 'cro') Croatia 
+                            option(value= 'bih') BIH
+                            option(value= 'mkd') MKD
+                            option(value= 'mon') Montenegro
+                            option(value= 'srb') Serbia
+                            option(value= 'alb') Albania
+                    label.form__label(for='hierarchical-city') Starting City
+                        select.mbsc-input#hierarchical-city(data-dropdown="true", placeholder="Please select...", disabled)
+        div.mbsc-grid.mbsc-grid-fixed.mbsc-no-padding.selectFormDestination
+            div.mbsc-row
+                div.mbsc-col-sm-12
+                    div.mbsc-form-group-inset
+                    label.form__label(for='hierarchical-country') Destination Contry
+                        Country
+                        select.mbsc-input#hierarchical-country-destination(data-dropdown="true", placeholder="Please select...") Please select
+                            option(value= 'empty') Please select ...
+                            option(value= 'si') Slovenija
+                            option(value= 'cro') Croatia 
+                            option(value= 'bih') BIH
+                            option(value= 'mkd') MKD
+                            option(value= 'mon') Montenegro
+                            option(value= 'srb') Serbia
+                            option(value= 'alb') Albania
+                    label.form__label(for='hierarchical-city') Destination City
+                        select.mbsc-input#hierarchical-city-destination(data-dropdown="true", placeholder="Please select...", disabled)
+        .form__group
+          button.btn.btn--green Search
+    each trip in trips
+        a(href= '/trip/'+ trip._id)
+            div.tripCard
+                h1.tripElement.startingPoint= trip.startingPoint
+                h1      ->
+                h1.tripElement.destination= trip.destination
+                h1.tripElement.tripPrice= trip.price
+                h1.tripElement.tripTimeAndDate= trip.timeAndDate
+                h1.tripElement.tripDriverName= trip.driver.name
+                h1.tripElement.tripDriverEmail= trip.driver.email
